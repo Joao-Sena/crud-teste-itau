@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <h2 class="titulo-itau-azul" *ngIf="typeAction === 0">Cadastrar Produto</h2>
+    <h2 class="titulo-itau-azul" *ngIf="typeAction === 1">Editar Produto</h2>
+
+    <form [formGroup]="formProduct">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Produto</mat-label>
+                    <input formControlName="product" id="product" matInput placeholder="Ex: Geladeira">
+                </mat-form-field>
+            </div>
+
+            <div class="col-6">
+                <mat-form-field class="w-100" floatLabel="always">
+                    <mat-label>Valor (R$)</mat-label>
+                    <input formControlName="value" matInput type="number" class="example-right-align" placeholder="Ex: 99.50">
+                    <!-- <span matPrefix>$&nbsp;</span> -->
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12 col-md-9">
+                <mat-form-field class="w-100">
+                    <mat-label>Descrição do produto</mat-label>
+                    <textarea formControlName="description" #textarea matInput maxlength="80" spellcheck="false"></textarea>
+                    <mat-hint align="end">{{textarea.value.length}}/80</mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-md-3 text-right">
+                <button class="botao-itau" title="Preencha todos os campos para prosseguir com o cadastro!"
+                (click)="saveProduct()" [disabled]="formProduct.invalid" *ngIf="typeAction === 0">Salvar</button>
+
+                <button class="botao-itau" title="Preencha todos os campos para prosseguir com o cadastro!"
+                (click)="editProduct()" [disabled]="formProduct.invalid" *ngIf="typeAction === 1">Salvar</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>

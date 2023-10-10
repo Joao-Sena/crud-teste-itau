@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product": "Mesa",
+      "description": "Mesa de madeira, moderna e delicada para dar um charma na sua sala de jantar",
+      "value": 756.89
+    },
+    {
+      "id": 2,
+      "product": "Poltrona",
+      "description": "Poltrona confortável, ótima para ler bons livros ou assistir aquela série",
+      "value": 399.99
+    },
+    {
+      "id": 3,
+      "product": "Churrasqueira",
+      "description": "Churrasqueira pré-moldada, facilidade para você iniciar o seu churrasco",
+      "value": 1000
+    },
+    {
+      "id": 4,
+      "product": "Ar-condicionado",
+      "description": "Não passe mais calor, programe seus horários para dias mais quentes",
+      "value": 1370
+    },
+    {
+      "id": 5,
+      "product": "Lustre",
+      "description": "Um belo lustre para deixar sua sala de jantar mais bonita e aconchegante",
+      "value": 635.6
+    },
+    {
+      "id": 6,
+      "product": "Iphone 15",
+      "value": 14.299,
+      "description": "Mais novo lançamento da Apple, venha conhecer o melhor celular do momento"
+    }
+  ]
+}

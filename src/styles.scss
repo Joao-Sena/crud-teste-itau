@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Cores
+.bg-itau-laranja { background-color: #ef761b;}
+.bg-itau-azul { background-color: #1a4186; }
+.bg-itau-branco { background-color: #ffffff; };
+.bg-itau-gelo { background-color: #fafafa; };
+
+.c-itau-azul{ color: #1a4186; }
+.c-itau-laranja{ color: #ef761b; }
+
+// Titulos e paragrafos
+.titulo-itau-azul{ font-size: 18px; font-weight: 500; color: #1f4fa3; }
+.titulo-itau-laranja{ font-size: 18px; font-weight: 500; color: #ef761b; }
+.texto-itau{ color: #7e7e7e; font-size: 14px; font-weight: 300; }
+.icone:hover { cursor: pointer; text-shadow: 2px 2px #0a0a0a20; transition: .2s linear all; }
+
+// Componentes
+.botao-itau{
+    border: none;
+    border-radius: 2px;
+    padding: 8px 24px;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #ef761b;
+    color: #fff;
+    outline: none;
+    margin: 17px 0px 0px 0px;
+    &:hover{ cursor: pointer; }
+}
+
+.botao-itau:disabled,
+.botao-itau[disabled]{
+  background: #ef761b;
+  color: #fff;
+  opacity: 0.6;
+  cursor: default;
+  &:hover{ cursor: default;}
+}
+
+.itau-snackbar{
+    background: #fafafa;
+    color: #686868;
+    border-left: 4px solid #1a4186;
+    button {
+        color: #ef761b;
+        border: none;
+    }
+}

@@ -1,5 +1,23 @@
 # CrudTesteItau
 
+## Como usar
+Para rodar o projeto siga os passos:
+1 - Baixe o projeto do Github
+2 - Rode o comando NPM INSTALL (na pasta do projeto baixado) em sua máquina (precisa do NODE instaldo, Angular acredito que é opcional)
+4 - Rode o Json-Server para simular o Back-End (é necessário ele para funcionar), no terminal na pasta raiz do projeto, rode: json-server --watch db.json
+5 - Caso de tudo certo, roda o comando "ng serve -o" ou "npm start" / Para inicializar o Front-End
+6 - Com o Back-End rodando e o Front-End pode acessar a URL "http://localhost:4200/" para navegar pelo projeto.
+
+Obs: Qualquer dúvida basta chamar, Angular versão: 13, Node versão: 12.
+
+# Imagens de como o sistema finalizado:
+
+## Página Home
+<img src="/assets/home.JPG">
+
+## Modal de Edição
+<img src="/assets/modal-editar-criar.JPG">
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
