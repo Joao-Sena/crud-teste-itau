@@ -34,22 +34,22 @@ export class ListProductsComponent implements OnInit {
   }
 
   getListProducts() {
-    this.productsService.getAllProducts().pipe(take(1)).subscribe(
-      (response: any) => {
+    this.productsService.getAllProducts().pipe(take(1)).subscribe({
+      next: (response: any) => {
         
         this.productsList = response;
         this.dataSource = new MatTableDataSource<any>(this.productsList);
 
       },
-      (err: HttpErrorResponse) => {
+      error: (err: HttpErrorResponse) => {
         console.error(err);
       }
-    );
+    });
   }
 
   deleteProduct(id: number) {
-    this.productsService.deleteProduct(id).pipe(take(1)).subscribe(
-      (response: any) => {
+    this.productsService.deleteProduct(id).pipe(take(1)).subscribe({
+      next: (response: any) => {
 
         this.snackBar.open('O produto foi deletado com sucesso!', 'OK', {
           panelClass: ['itau-snackbar'],
@@ -59,10 +59,10 @@ export class ListProductsComponent implements OnInit {
 
         this.getListProducts();
       },
-      (err: HttpErrorResponse) => {
+      error: (err: HttpErrorResponse) => {
         console.error(err);
       }
-    );
+    });
   }
 
   openModalCreate() {

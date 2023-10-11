@@ -38,8 +38,8 @@ export class ModalProductsComponent implements OnInit {
   saveProduct() {
     const dataForm = this.formProduct.getRawValue();
 
-    this.productService.insertProduct(dataForm).pipe(take(1)).subscribe(
-      (response: any) => {
+    this.productService.insertProduct(dataForm).pipe(take(1)).subscribe({
+      next: (response: any) => {
 
         this.dialogRef.close();
         this.snackBar.open('O produto cadastrado com sucesso!', 'OK', {
@@ -49,17 +49,17 @@ export class ModalProductsComponent implements OnInit {
         });
 
       },
-      (err: HttpErrorResponse) => {
+      error: (err: HttpErrorResponse) => {
         console.error(err);
       }
-    );
+    });
   }
 
   editProduct() {
     const dataForm = this.formProduct.getRawValue();
 
-    this.productService.updateProduct(dataForm).pipe(take(1)).subscribe(
-      (response: any) => {
+    this.productService.updateProduct(dataForm).pipe(take(1)).subscribe({
+      next: (response: any) => {
 
         this.dialogRef.close();
         this.snackBar.open('O produto editado com sucesso!', 'OK', {
@@ -69,10 +69,10 @@ export class ModalProductsComponent implements OnInit {
         });
 
       },
-      (err: HttpErrorResponse) => {
+      error: (err: HttpErrorResponse) => {
         console.error(err);
       }
-    );
+    });
   }
 
   buildForm() {
