@@ -46,11 +46,13 @@ describe('ModalProductsComponent', () => {
   });
 
   it('should call saveProduct on save', () => {
+    productService.insertProduct.and.returnValue(of({value: []}));
     component.saveProduct();
     expect(productService.insertProduct).toHaveBeenCalled();
   });
 
   it('should call editProduct on edit', () => {
+    productService.updateProduct.and.returnValue(of({value: []}));
     component.typeAction = 1;
     component.editProduct();
     expect(productService.updateProduct).toHaveBeenCalled();
