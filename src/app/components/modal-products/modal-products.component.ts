@@ -35,7 +35,7 @@ export class ModalProductsComponent implements OnInit {
     this.buildForm();
   }
 
-  saveProduct() {
+  saveProduct(): void {
     const dataForm = this.formProduct.getRawValue();
 
     this.productService.insertProduct(dataForm).pipe(take(1)).subscribe({
@@ -55,7 +55,7 @@ export class ModalProductsComponent implements OnInit {
     });
   }
 
-  editProduct() {
+  editProduct(): void {
     const dataForm = this.formProduct.getRawValue();
 
     this.productService.updateProduct(dataForm).pipe(take(1)).subscribe({
@@ -75,7 +75,7 @@ export class ModalProductsComponent implements OnInit {
     });
   }
 
-  buildForm() {
+  buildForm(): void {
     this.formProduct = this.formBuilder.group({
       id: 0,
       product: ['', [Validators.required]],

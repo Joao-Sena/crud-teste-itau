@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { take } from 'rxjs';
 import { ProductsServiceService } from 'src/app/services/products-service.service';
 import { ModalProductsComponent } from '../modal-products/modal-products.component';
+import { Product } from 'src/app/interfaces/product';
 
 @Component({
   selector: 'app-list-products',
@@ -14,7 +15,7 @@ import { ModalProductsComponent } from '../modal-products/modal-products.compone
 })
 export class ListProductsComponent implements OnInit {
 
-  productsList: any;
+  productsList: Array<Product>;
   displayedColumns: string[] = ['id', 'product', 'description', 'value', 'action'];
   dataSource: any
 
@@ -28,15 +29,14 @@ export class ListProductsComponent implements OnInit {
     this.getListProducts();
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  getListProducts() {
+  getListProducts(): void {
     this.productsService.getAllProducts().pipe(take(1)).subscribe({
-      next: (response: any) => {
-        
+      next: (response) => {
         this.productsList = response;
         this.dataSource = new MatTableDataSource<any>(this.productsList);
 
@@ -47,7 +47,7 @@ export class ListProductsComponent implements OnInit {
     });
   }
 
-  deleteProduct(id: number) {
+  deleteProduct(id: number): void {
     this.productsService.deleteProduct(id).pipe(take(1)).subscribe({
       next: (response: any) => {
 
@@ -65,7 +65,7 @@ export class ListProductsComponent implements OnInit {
     });
   }
 
-  openModalCreate() {
+  openModalCreate(): void {
     this.dialog.open(ModalProductsComponent, {
       width: '50%',
       height: '270px',
@@ -73,7 +73,7 @@ export class ListProductsComponent implements OnInit {
     }).afterClosed().subscribe(() => this.getListProducts());
   }
 
-  openModalEdit(product: any) {
+  openModalEdit(product: any): void {
     this.dialog.open(ModalProductsComponent, {
       width: '50%',
       height: '270px',
